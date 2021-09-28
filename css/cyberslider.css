@@ -1,0 +1,204 @@
+/**
+ * CUSTOM CSS for dynamically-generated content
+ *
+ * @format
+ */
+
+.rsRow {
+	opacity: 0.75;
+	display: block;
+	position: relative;
+	/* margin: 0;
+	padding: 0; */
+	transition: transform 1.75s cubic-bezier(.08,1.35,.16,1);
+}
+
+.wraparound {
+	opacity: 0.15;
+}
+
+/**
+ * ANIMATIONS
+ */
+
+.titlegrp {
+	z-index: 700;
+	filter: drop-shadow(0px 0px 40px rgba(200, 200, 255, 1));
+}
+
+.titleproject {
+	animation-delay: -0.05s !important;
+	mix-blend-mode: color-dodge;
+}
+
+.titlestudentnames {
+	mix-blend-mode: color-dodge;
+}
+
+.treveal {
+	animation: title_reveal_left 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards;
+	/* clip-path: inset(0% 0% 100% 0%); */
+	/* clip-path: inset(0% 0% -10% 0%);	 */
+}
+
+.trevealleft {
+	animation: title_reveal_left 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards;
+}
+
+.trevealright {
+	animation: title_reveal_right 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards;
+}
+.trevealup {
+	animation: title_reveal_up 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards;
+}
+.trevealdown {
+	animation: title_reveal_down 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards;
+}
+
+
+.thide {
+	opacity: 0;
+	animation: title_hide 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards;
+	/* clip-path: inset(0% 0% 100% 0%); */
+	/* transform: translate(0, 5rem); */
+}
+
+.wayfinder {
+	opacity: 0;
+	transition: transform 0.85s cubic-bezier(0,.8,.3,1) 0s,
+				opacity 1s ease-out 0.05s;
+}
+
+.wayfinder-glow {
+	mix-blend-mode: color-dodge;
+	opacity: 1;
+	transition: transform 1s cubic-bezier(0,.8,.3,1) 0s,
+				opacity 1s ease-out 0.05s;
+
+}
+
+.wayfinderreveal {
+	transition: transform 0.85s cubic-bezier(0,.8,.3,1) 0s,
+				opacity 1s ease-out 0.05s;
+	opacity: 1;
+	transform: scale(1);
+	/* animation: wayfinder_reveal 0.65s cubic-bezier(0,.8,.3,1) 0.05s forwards; */
+}
+
+.wayfinderhide {
+	transition: transform 0.5s cubic-bezier(.41,.01,.3,1) 0s,
+				opacity 0.5s ease-out 0.05s;
+	opacity: 0;
+	transform: scale(1.2);
+	/* animation: wayfinder_reveal 0.65s cubic-bezier(0,.8,.3,1) 0.05s forwards; */
+}
+
+
+
+
+
+.heroimage {
+	/* opacity: 1; */
+	animation: heroimage_reveal 1s ease forwards;
+	/* animation: heroimage_reveal 1s cubic-bezier(.14,1.79,.43,1) forwards; */
+}
+
+#cybergrid {
+	opacity: 1;
+	transition: transform 1.75s cubic-bezier(.08,1.35,.16,1);
+}
+
+
+@keyframes title_reveal {
+	0% {
+		/* clip-path: inset(0% 0% 100% 0%); */
+		transform: translate(0, 5rem);
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	100% {
+		clip-path: inset(0% 0% -10% 0%);
+	}
+}
+
+@keyframes title_reveal_left {
+	0% {
+		clip-path: inset(0% 0% -10% 100%);
+		transform: translate(-5rem, 0);
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	100% {
+		clip-path: inset(0% 0% -10% 0%);
+	}
+}
+
+@keyframes title_reveal_right {
+	0% {
+		clip-path: inset(0% 100% -10% 0%);
+		transform: translate(5rem, 0);
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	100% {
+		clip-path: inset(0% 0% -10% 0%);
+	}
+}
+
+@keyframes title_reveal_up {
+	0% {
+		clip-path: inset(100% 0% -10% 0%);
+		transform: translate(0, -5rem);
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	100% {
+		clip-path: inset(0% 0% -10% 0%);
+	}
+}
+
+@keyframes title_reveal_down {
+	0% {
+		clip-path: inset(0% 0% 100% 0%);
+		transform: translate(0, 5rem);
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	100% {
+		clip-path: inset(0% 0% -10% 0%);
+	}
+}
+
+@keyframes title_hide {
+	0% {
+		opacity: 1;
+	}
+	25% {
+		opacity: 0;
+	}
+	100% {
+		clip-path: inset(0% 0% 100% 0%);
+		transform: translate(0, 5rem);
+	}
+}
+
+@keyframes heroimage_reveal {
+	0% {
+		opacity: 0;
+		transform: scale(0.75);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
