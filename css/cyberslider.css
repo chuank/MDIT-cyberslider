@@ -1,127 +1,194 @@
 /**
- * CUSTOM CSS for dynamically-generated content
+ * CUSTOM CSS & ANIMATIONS for dynamically-generated content
+ * This will have to be embedded back into Webflow as TXT
  *
  * @format
  */
 
-.rsRow {
-	opacity: 0.75;
+ .rsRow {
+	/* opacity: 0.75; */
 	display: block;
 	position: relative;
 	/* margin: 0;
 	padding: 0; */
-	transition: transform 1.75s cubic-bezier(.08,1.35,.16,1);
+	transition: transform 1.75s cubic-bezier(0.08, 1.35, 0.16, 1);
 }
 
 .wraparound {
-	opacity: 0.15;
+	opacity: 1;
 }
 
-/**
- * ANIMATIONS
- */
+.rsintrogrp {
+	opacity: 1;
+}
 
+/* WORK METADATA */
 .titlegrp {
+	pointer-events: none;
 	z-index: 700;
-	filter: drop-shadow(0px 0px 40px rgba(200, 200, 255, 1));
+	text-shadow: 0px 0px 20px rgba(200, 200, 255, 0.75);
 }
 
 .titleproject {
+	clip-path: inset(0% 0% 100% 0%);
 	animation-delay: -0.05s !important;
 	mix-blend-mode: color-dodge;
 }
 
 .titlestudentnames {
+	clip-path: inset(0% 0% 100% 0%);
 	mix-blend-mode: color-dodge;
 }
 
-.treveal {
-	animation: title_reveal_left 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards;
-	/* clip-path: inset(0% 0% 100% 0%); */
-	/* clip-path: inset(0% 0% -10% 0%);	 */
-}
-
 .trevealleft {
-	animation: title_reveal_left 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards;
+	animation: title_reveal_left 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
+		normal forwards;
 }
 
 .trevealright {
-	animation: title_reveal_right 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards;
+	animation: title_reveal_right 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
+		normal forwards;
 }
 .trevealup {
-	animation: title_reveal_up 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards;
+	animation: title_reveal_up 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal
+		forwards;
 }
 .trevealdown {
-	animation: title_reveal_down 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards;
+	animation: title_reveal_down 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
+		normal forwards;
 }
-
 
 .thide {
 	opacity: 0;
-	animation: title_hide 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards;
+	animation: title_hide 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal
+		forwards;
 	/* clip-path: inset(0% 0% 100% 0%); */
 	/* transform: translate(0, 5rem); */
 }
 
-.wayfinder {
-	opacity: 0;
-	transition: transform 0.85s cubic-bezier(0,.8,.3,1) 0s,
-				opacity 1s ease-out 0.05s;
+.rsrevealup {
+	animation: rs_reveal_up 2s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards,
+			   typewriterX 0.5s steps(15, end) 0s 1 normal forwards;
+}
+.rsrevealdown {
+	animation: rs_reveal_down 2s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards,
+			   typewriterX 0.5s steps(15, end) 0s 1 normal forwards;
 }
 
-.wayfinder-glow {
-	mix-blend-mode: color-dodge;
-	opacity: 1;
-	transition: transform 1s cubic-bezier(0,.8,.3,1) 0s,
-				opacity 1s ease-out 0.05s;
 
+
+/* WAYFINDER */
+.wayfinder-bkt {
+	opacity: 0;
+	mix-blend-mode: color-dodge;
+}
+
+.wayfinder-text-rs {
+	text-overflow: ellipsis;
+	animation: typewriterX 0.75s steps(15, end) 0.2s 1 normal forwards;
+}
+
+.wayfinder-text-coursename {
+	text-overflow: ellipsis;
+	animation: blinkIn 0.5s steps(5, start) 0.5s 1 normal forwards;
+}
+
+.wayfinder-bkt-DFB {
+	filter: brightness(0) saturate(100%) invert(48%) sepia(76%) saturate(1307%)
+		hue-rotate(285deg) brightness(101%) contrast(104%);
+}
+
+.wayfinder-bkt-IME {
+	filter: brightness(0) saturate(100%) invert(85%) sepia(92%) saturate(304%)
+		hue-rotate(84deg) brightness(110%) contrast(107%);
+}
+
+.wayfinder-bkt-IFE {
+	filter: brightness(0) saturate(100%) invert(77%) sepia(50%) saturate(2272%)
+		hue-rotate(189deg) brightness(100%) contrast(102%);
+}
+
+.wayfinder-bkt-IXT {
+	filter: brightness(0) saturate(100%) invert(75%) sepia(95%) saturate(356%)
+		hue-rotate(11deg) brightness(108%) contrast(106%);
+}
+
+.wayfinder-bkt-SUF {
+	filter: brightness(0) saturate(100%) invert(100%) sepia(30%) saturate(5283%)
+		hue-rotate(57deg) brightness(125%) contrast(100%);
+}
+
+.wayfinder-bkt-MJP {
+	filter: invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%)
+		contrast(100%);
 }
 
 .wayfinderreveal {
-	transition: transform 0.85s cubic-bezier(0,.8,.3,1) 0s,
-				opacity 1s ease-out 0.05s;
+	transition: transform 0.85s cubic-bezier(0, 0.8, 0.3, 1) 0s,
+		filter 0.5s ease-in-out 0s, opacity 1s ease-out 0.05s;
 	opacity: 1;
 	transform: scale(1);
-	/* animation: wayfinder_reveal 0.65s cubic-bezier(0,.8,.3,1) 0.05s forwards; */
 }
 
 .wayfinderhide {
-	transition: transform 0.5s cubic-bezier(.41,.01,.3,1) 0s,
-				opacity 0.5s ease-out 0.05s;
+	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s,
+		filter 0.5s ease-in-out 0s, opacity 0.5s ease-out 0.05s;
 	opacity: 0;
-	transform: scale(1.2);
-	/* animation: wayfinder_reveal 0.65s cubic-bezier(0,.8,.3,1) 0.05s forwards; */
+	transform: scale(1.3);
 }
 
-
-
-
-
+/* WORK IMAGE */
 .heroimage {
-	/* opacity: 1; */
-	animation: heroimage_reveal 1s ease forwards;
-	/* animation: heroimage_reveal 1s cubic-bezier(.14,1.79,.43,1) forwards; */
+	opacity: 0;
+	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0.075s,
+				opacity 0.5s ease-out 0s,
+				filter 1.5s cubic-bezier(0.4, 0, 0.3, 1) 0s;
 }
 
+.heroimage-reveal {
+	opacity: 1;
+	transform: scale(1);
+}
+
+/* CYBERGRID CONTAINER */
 #cybergrid {
 	opacity: 1;
-	transition: transform 1.75s cubic-bezier(.08,1.35,.16,1);
+	transition: transform 1.75s cubic-bezier(0.08, 1.35, 0.16, 1),
+				opacity 0.5s ease-out 0s;
 }
 
 
-@keyframes title_reveal {
-	0% {
-		/* clip-path: inset(0% 0% 100% 0%); */
-		transform: translate(0, 5rem);
-		opacity: 0;
-	}
-	25% {
-		opacity: 1;
-	}
-	100% {
-		clip-path: inset(0% 0% -10% 0%);
-	}
+/* RS pattern texture */
+.rs-underlay-flex {
+	display: block;
+	transform: 'scale(2) rotate3d(0, 0, 0, 0deg)';
+	opacity: 0;
+	transition: transform 20s cubic-bezier(0.25, 0, 0.75, 1) 0s,
+		opacity 0.5s ease-in-out 0.05s;
 }
+
+/* City background */
+.cityrs {
+	opacity: 0;
+	transform: 'scale(2) rotate3d(0, 0, 0, 0deg)';
+	transition: transform 6s cubic-bezier(0.4, 0, 0.3, 1) 0s,
+		filter 3s ease-in-out 1s, opacity 3s ease-in-out 0.05s;
+}
+
+
+/********* MEDIA QUERIES **********/
+
+@media screen and (max-width: 767px) {
+	.wayfinder-text-coursename {
+		top: 42px;
+		left: calc(100vw - 13px);
+		bottom: auto;
+		width: calc(100vh - 42px);
+	}
+} 
+
+/* clip-path: inset(0% 0% 100% 0%); // HIDE */
+/* clip-path: inset(0% 0% -10% 0%);	// SHOW */
 
 @keyframes title_reveal_left {
 	0% {
@@ -192,13 +259,71 @@
 	}
 }
 
+@keyframes rs_reveal_up {
+	0% {
+		transform: scale(1.2) translate(0, -5rem);
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1) translate(0, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes rs_reveal_down {
+	0% {
+		transform: scale(1.2) translate(0, 5rem);
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+
+
+
 @keyframes heroimage_reveal {
 	0% {
 		opacity: 0;
-		transform: scale(0.75);
+		transform: scale(0.5);
 	}
 	100% {
 		opacity: 1;
 		transform: scale(1);
+	}
+}
+
+@keyframes typewriterX {
+	from {
+		clip-path: inset(-50% 150% -50% -50%);
+	}
+	100% {
+		clip-path: inset(-50% -50% -50% -50%);
+	}
+}
+
+@keyframes blinkIn {
+	0% {
+		opacity: 0.2;
+	}
+	15% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 0.2;
+	}
+	30% {
+		opacity: 0.8;
+	}
+	100% {
+		opacity: 0.9;
 	}
 }
