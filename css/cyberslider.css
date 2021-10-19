@@ -1,11 +1,38 @@
 /**
  * CUSTOM CSS & ANIMATIONS for dynamically-generated content
- * This will have to be embedded back into Webflow as TXT
  *
  * @format
  */
 
- .rsRow {
+
+/* pagecontent */
+
+#pagecontent {
+	pointer-events: none;
+}
+
+/* NOTE TO SELF: any linkable content needs to have pointer-events set to auto */
+/* #detailgrp {
+	pointer-events: auto;
+} */
+
+#detailgrp {
+	pointer-events: none;
+}
+
+#detailgrp-linkbox {
+	pointer-events: auto;
+}
+/* #detailgrp-flex {
+	pointer-events: none;
+} */
+
+#touchzone {
+	pointer-events: auto;
+}
+
+
+.rsRow {
 	/* opacity: 0.75; */
 	display: block;
 	position: relative;
@@ -23,12 +50,6 @@
 }
 
 /* WORK METADATA */
-.titlegrp {
-	pointer-events: none;
-	z-index: 700;
-	text-shadow: 0px 0px 20px rgba(200, 200, 255, 0.75);
-}
-
 .titleproject {
 	clip-path: inset(0% 0% 100% 0%);
 	animation-delay: -0.05s !important;
@@ -67,12 +88,43 @@
 }
 
 .rsrevealup {
-	animation: rs_reveal_up 2s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards,
-			   typewriterX 0.5s steps(15, end) 0s 1 normal forwards;
+	animation: rs_reveal_up 2s cubic-bezier(0.14, 1.79, 0.43, 1) 1s 1 normal forwards,
+			   typewriterX 0.25s steps(15, end) 1s 1 normal forwards;
 }
 .rsrevealdown {
-	animation: rs_reveal_down 2s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal forwards,
-			   typewriterX 0.5s steps(15, end) 0s 1 normal forwards;
+	animation: rs_reveal_down 2s cubic-bezier(0.14, 1.79, 0.43, 1) 1s 1 normal forwards,
+			   typewriterX 0.25s steps(15, end) 1s 1 normal forwards;
+}
+
+.detailgrp-linkbox-border {
+	padding: 1em;
+	border: 2px #fff solid;
+	position: relative;
+	background: #000;
+	opacity: 0.75;
+	z-index: 1;
+}
+
+.detailgrp-linkbox-border:before {
+	content: '';
+	display: block;
+	position: absolute;
+	background: #000;
+	top: -2px;
+	bottom: -2px;
+	left: 0.75em;
+	right: 0.75em;
+}
+
+.detailgrp-linkbox-border:after {
+	content: '';
+	display: block;
+	position: absolute;
+	background: #000;
+	left: -2px;
+	right: -2px;
+	top: 0.75em;
+	bottom: 0.75em;
 }
 
 
@@ -83,14 +135,19 @@
 	mix-blend-mode: color-dodge;
 }
 
+#wayfinder-bkt-glow {
+	mix-blend-mode: color-dodge;
+}
+
 .wayfinder-text-rs {
+	/* mix-blend-mode: normal; */
 	text-overflow: ellipsis;
-	animation: typewriterX 0.75s steps(15, end) 0.2s 1 normal forwards;
+	animation: typewriterX 0.75s steps(15, end) 0.3s 1 normal forwards;
 }
 
 .wayfinder-text-coursename {
 	text-overflow: ellipsis;
-	animation: blinkIn 0.5s steps(5, start) 0.5s 1 normal forwards;
+	animation: blinkIn 0.5s steps(5, start) 0.75s 1 normal forwards;
 }
 
 .wayfinder-bkt-DFB {
@@ -137,6 +194,16 @@
 	transform: scale(1.3);
 }
 
+#wayfinder-v {
+	filter: none;
+}
+
+#wayfinder-h-scroll {
+	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s,
+				filter 0.5s ease-in-out 0s, opacity 0.5s ease-out 0.05s;
+}
+
+
 /* WORK IMAGE */
 .heroimage {
 	opacity: 0;
@@ -148,6 +215,21 @@
 .heroimage-reveal {
 	opacity: 1;
 	transform: scale(1);
+}
+
+
+/* BLACKOUT */
+
+#blackout-rear {
+	opacity: 0;
+	transition: opacity 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s;
+}
+
+/* STARFIELD CONTAINER */
+#starfield {
+	opacity: 0;
+	transition: opacity 1.5s ease-in-out 0s;
+	animation: starfieldRotate 600s linear infinite;
 }
 
 /* CYBERGRID CONTAINER */
@@ -170,10 +252,68 @@
 /* City background */
 .cityrs {
 	opacity: 0;
-	transform: 'scale(2) rotate3d(0, 0, 0, 0deg)';
-	transition: transform 6s cubic-bezier(0.4, 0, 0.3, 1) 0s,
-		filter 3s ease-in-out 1s, opacity 3s ease-in-out 0.05s;
+	/* transform: 'scale(2) rotate3d(1, 0, 0, 30deg)'; */
+	transition: transform 3s cubic-bezier(0,1.01,.82,.47) 0s,
+				opacity 3s cubic-bezier(0,1.01,.82,.47) 0s,
+				filter 3s ease-in-out 1s;				
 }
+
+.cityrs-home {
+	transition: transform 3s cubic-bezier(.35,0,.58,1) 0.2s,
+				filter 3s ease-in-out 0s,
+				opacity 3s ease-in-out 0s;
+}
+
+.cityrs-hide {
+	/* transform: 'scale(2) rotate3d(0, 0, 0, 0deg)'; */
+	transition: transform 1s cubic-bezier(0.4, 0, 0.3, 1) 0.2s,
+				filter 0.5s ease-in-out 0s,
+				opacity 1s ease-in-out 0s;
+}
+
+.cityrs-reveal {
+	transition: transform 1s cubic-bezier(0.4, 0, 0.3, 1) 0s,
+				filter 2s ease-in-out 0s,
+				opacity 1s ease-in-out 0.05s;
+}
+
+
+/* HOME */
+.logomdit {
+	/* opacity: 0.5; */
+	animation: opacityFlicker 3s steps(2, start) 0s infinite alternate forwards;
+}
+
+.logomditgrp {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out 0s;
+}
+
+.homenavtxt {
+	opacity: 0.75;
+	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 2s,
+				clip-path 0.5s cubic-bezier(0.4, 0, 0.3, 1) 2.25s;
+}
+
+#hometxt-about {
+	clip-path: inset(0% 0% 0% 100%);
+	transform: translateX(15em);
+}
+
+#hometxt-msg {
+	clip-path: inset(0% 100% 0% 0%);
+	transform: translateX(-15em);
+}
+
+
+/* HOME-ABOUT */
+
+#logoabout-globalmobile {
+	animation: opacityFlicker 3s steps(2, start) 0s infinite alternate forwards;
+}
+
+
+
 
 
 /********* MEDIA QUERIES **********/
@@ -189,6 +329,21 @@
 
 /* clip-path: inset(0% 0% 100% 0%); // HIDE */
 /* clip-path: inset(0% 0% -10% 0%);	// SHOW */
+
+@keyframes starfieldRotate {
+	0% {
+		transform: rotate(0deg) scale(1);
+	}
+	50% {
+		transform: rotate(180deg) scale(2);
+	}
+	100% {
+		transform: rotate(360deg) scale(1);
+	}
+}
+
+
+
 
 @keyframes title_reveal_left {
 	0% {
@@ -261,7 +416,7 @@
 
 @keyframes rs_reveal_up {
 	0% {
-		transform: scale(1.2) translate(0, -5rem);
+		transform: scale(1) translate(0, -5rem);
 		opacity: 0;
 	}
 	25% {
@@ -275,7 +430,7 @@
 
 @keyframes rs_reveal_down {
 	0% {
-		transform: scale(1.2) translate(0, 5rem);
+		transform: scale(1) translate(0, 5rem);
 		opacity: 0;
 	}
 	25% {
@@ -287,19 +442,6 @@
 }
 
 
-
-
-
-@keyframes heroimage_reveal {
-	0% {
-		opacity: 0;
-		transform: scale(0.5);
-	}
-	100% {
-		opacity: 1;
-		transform: scale(1);
-	}
-}
 
 @keyframes typewriterX {
 	from {
@@ -326,4 +468,32 @@
 	100% {
 		opacity: 0.9;
 	}
+}
+
+
+@keyframes opacityFlicker {
+	0% { opacity: 0.9; }
+	5% { opacity: 0.95; }
+	10% { opacity: 0.85; }
+	15% { opacity: 0.96; }
+	19% { opacity: 0.9; transform: skew(0) scale(1); }
+	20% { opacity: 0.5; transform: skew(2deg, 0deg) scale(1.03); }
+	21% { opacity: 0.88; transform: skew(0) scale(1);}
+	25% { opacity: 0.97; }
+	30% { opacity: 0.89; }
+	35% { opacity: 0.88; }
+	40% { opacity: 0.83; }
+	50% { opacity: 0.95; }
+	55% { opacity: 0.9; }
+	60% { opacity: 1; }
+	64% { transform: skew(0); }
+	65% { opacity: 0.9; transform: skew(0deg, 1deg); }
+	66% { transform: skew(0); }
+	70% { opacity: 1; }
+	75% { opacity: 0.94; }
+	80% { opacity: 0.85; }
+	85% { opacity: 0.89; }
+	90% { opacity: 1; }
+	95% { opacity: 0.97; }
+	100% { opacity: 1; }
 }
