@@ -46,12 +46,12 @@
 .titleproject {
 	clip-path: inset(0% 0% 100% 0%);
 	animation-delay: -0.05s !important;
-	mix-blend-mode: color-dodge;
+	/* mix-blend-mode: color-dodge; */
 }
 
 .titlestudentnames {
 	clip-path: inset(0% 0% 100% 0%);
-	mix-blend-mode: color-dodge;
+	/* mix-blend-mode: color-dodge; */
 }
 
 .trevealleft {
@@ -228,6 +228,11 @@
 
 #blackout-rear {
 	opacity: 0;
+	transition: opacity 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s;
+}
+
+#whiteout-rear {
+	mix-blend-mode: lighten;
 	transition: opacity 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s;
 }
 
