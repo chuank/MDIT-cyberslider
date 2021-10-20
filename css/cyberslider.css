@@ -5,16 +5,17 @@
  */
 
 
-/* pagecontent */
+/* NOTE TO SELF: any linkable content needs to have pointer-events set to auto */
+
+/* filter touch events */
+
+#touchzone {
+	pointer-events: auto;
+}
 
 #pagecontent {
 	pointer-events: none;
 }
-
-/* NOTE TO SELF: any linkable content needs to have pointer-events set to auto */
-/* #detailgrp {
-	pointer-events: auto;
-} */
 
 #detailgrp {
 	pointer-events: none;
@@ -23,29 +24,21 @@
 #detailgrp-linkbox {
 	pointer-events: auto;
 }
-/* #detailgrp-flex {
-	pointer-events: none;
-} */
 
-#touchzone {
+.aboutfrontmatter a {
 	pointer-events: auto;
+	color: rgba(243, 243, 243, 0.9);
+	text-decoration: none;
 }
 
-
+/* FOR DYNAMICALLY-CREATED DIVS */
 .rsRow {
-	/* opacity: 0.75; */
 	display: block;
 	position: relative;
-	/* margin: 0;
-	padding: 0; */
 	transition: transform 1.75s cubic-bezier(0.08, 1.35, 0.16, 1);
 }
 
 .wraparound {
-	opacity: 1;
-}
-
-.rsintrogrp {
 	opacity: 1;
 }
 
@@ -96,9 +89,11 @@
 			   typewriterX 0.25s steps(15, end) 1s 1 normal forwards;
 }
 
+/* DETAIL LINKBOX */
+
 .detailgrp-linkbox-border {
 	padding: 1em;
-	border: 2px #fff solid;
+	border: 1px #fff solid;
 	position: relative;
 	background: #000;
 	opacity: 0.75;
@@ -110,8 +105,8 @@
 	display: block;
 	position: absolute;
 	background: #000;
-	top: -2px;
-	bottom: -2px;
+	top: -1px;
+	bottom: -1px;
 	left: 0.75em;
 	right: 0.75em;
 }
@@ -121,10 +116,21 @@
 	display: block;
 	position: absolute;
 	background: #000;
-	left: -2px;
-	right: -2px;
+	left: -1px;
+	right: -1px;
 	top: 0.75em;
 	bottom: 0.75em;
+}
+
+.detailgrp-linkbox-show {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;	
+}
+
+.detailgrp-linkbox-hide {
+	display: none;
 }
 
 
