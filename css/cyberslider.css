@@ -334,8 +334,10 @@
 
 /* STARFIELD CONTAINER */
 #starfield {
-	opacity: 0;
-	transition: opacity 1.5s ease-in-out 0s;
+	opacity: 0.5;
+	transform: scale(0.1);
+	transition: opacity 1.5s ease-in-out 0s,
+				transform 1.5s ease-in-out 0s;
 	animation: starfieldRotate 600s linear infinite;
 }
 
@@ -352,21 +354,46 @@
 	pointer-events: none;
 }
 
-#onboarding-vert {
+#onboarding-intro {
 	opacity: 0;
-	animation: onboard-vert 5s cubic-bezier(0.08, 1.35, 0.16, 1) 4s;
+	animation: onboard-intro 3s cubic-bezier(.31,1.1,.4,1.01) 2s;
+}
+
+#onboarding-vert {
+	margin-left: -15px;
+	opacity: 0;
+	animation: onboard-vert 5s cubic-bezier(0.08, 1.35, 0.16, 1) 5s;
 }
 
 #onboarding-horiz {
 	opacity: 0;
-	animation: onboard-horiz 5s cubic-bezier(0.08, 1.35, 0.16, 1) 9s;
+	animation: onboard-horiz 5s cubic-bezier(0.08, 1.35, 0.16, 1) 10s;
 }
 
 #onboarding-tap {
 	opacity: 0;
-	animation: onboard-tap 5s cubic-bezier(0.08, 1.35, 0.16, 1) 14s;
+	animation: onboard-tap 5s cubic-bezier(0.08, 1.35, 0.16, 1) 15s;
 }
 
+
+@keyframes onboard-intro {
+	0% {
+		opacity: 0;
+		transform: scale(1.5);
+	}
+	50% {
+		opacity: 0.85;
+		transform: scale(1);
+	}
+	70% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1);
+	}
+}
 
 @keyframes onboard-vert {
 	from {
@@ -422,10 +449,16 @@
 .cityrs {
 	opacity: 0;
 	/* transform: 'scale(2) rotate3d(1, 0, 0, 30deg)'; */
-	transition: transform 3s cubic-bezier(0,1.01,.82,.47) 0s,
+	/* transition: transform 3s cubic-bezier(0,1.01,.82,.47) 0s,
 				opacity 3s cubic-bezier(0,1.01,.82,.47) 0s,
-				filter 3s ease-in-out 1s;				
+				filter 3s ease-in-out 1s;				 */
 }
+
+.cityrs-home-init {
+	transition: transform 10s cubic-bezier(.35,0,.58,1) 0.2s,
+				filter 8s ease-in-out 0s,
+				opacity 8s ease-in-out 0s;
+}	
 
 .cityrs-home {
 	transition: transform 3s cubic-bezier(.35,0,.58,1) 0.2s,
@@ -449,13 +482,22 @@
 
 /* HOME */
 .logomdit {
-	/* opacity: 0.5; */
-	animation: opacityFlicker 3s steps(2, start) 0s infinite alternate forwards;
+	/* animation: opacityFlicker 3s steps(2, start) 0s infinite alternate forwards; */
+	animation: opacityFlicker-logo 4s steps(2, start) 0s infinite alternate forwards;
+}
+
+.logomdit-gm {
+	animation: opacityFlicker-logo-alt 4s steps(2, start) 0s infinite alternate forwards;
 }
 
 .logomditgrp {
 	opacity: 0;
 	transition: opacity 0.5s ease-in-out 0s;
+}
+
+.logotype-globalmobile {
+	opacity: 0;
+	transition: opacity 1s ease-in-out 0s;
 }
 
 .homenavtxt {
@@ -668,4 +710,42 @@
 	90% { opacity: 1; }
 	95% { opacity: 0.97; }
 	100% { opacity: 1; }
+}
+
+
+@keyframes opacityFlicker-logo {
+	0% { opacity: 1; }
+	5% { opacity: 0.97; }
+	10% { opacity: 0.89; }
+	15% { opacity: 0.88; }
+	20% { opacity: 0.83; }
+	25% { opacity: 0.95; }
+	30% { opacity: 0.9; transform: skew(0) scale(1); }
+	31% { opacity: 0.5; transform: skew(2deg, 0deg) scale(1.03); }
+	32% { opacity: 0.88; transform: skew(0) scale(1);}
+	33% { opacity: 1; }
+	34% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes opacityFlicker-logo-alt {
+	0% { opacity: 0; }
+	33% { opacity: 0; }
+	34% { opacity: 1; }
+	35% { opacity: 0.9; transform: skew(0) scale(1); }
+	36% { opacity: 0.5; transform: skew(2deg, 0deg) scale(1.03); }
+	37% { opacity: 0.88; transform: skew(0) scale(1);}
+	40% { opacity: 0.94; }
+	45% { opacity: 0.85; }
+	50% { opacity: 0.89; }
+	55% { opacity: 1; }
+	60% { opacity: 0.97; }  
+	65% { opacity: 0.85; }
+	70% { opacity: 1; }
+	75% { opacity: 0.88; }
+	80% { opacity: 0.83; }
+	85% { opacity: 0.95; }
+	90% { opacity: 0.94; }
+	95% { opacity: 0.85; }
+  	100% { opacity: 1; }
 }
