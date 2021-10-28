@@ -39,6 +39,15 @@
 	text-decoration: none;
 }
 
+/* USED TO TEMPORARILY CLEAR TRANSITIONS / SET VALUES IMMEDIATELY */
+.disable-css-transitions {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+
 /* FOR DYNAMICALLY-CREATED DIVS */
 .rsRow {
 	display: block;
@@ -48,6 +57,14 @@
 
 .wraparound {
 	opacity: 1;
+}
+
+.rsRow-hide {
+	visibility: hidden;
+}
+
+.rsRow-show {
+	visibility: visible;
 }
 
 
