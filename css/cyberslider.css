@@ -39,6 +39,12 @@
 	text-decoration: none;
 }
 
+/* PREVENT FONT SIZES FROM RESCALING DUE TO OS PREFERENCE?*/
+.body {
+	-webkit-text-size-adjust: 100%;
+}
+
+
 /* USED TO TEMPORARILY CLEAR TRANSITIONS / SET VALUES IMMEDIATELY */
 .disable-css-transitions {
     -webkit-transition: none !important;
@@ -253,18 +259,22 @@
 		contrast(100%);
 }
 
+.wayfinder-v-unit {
+	transition: opacity 0.5s cubic-bezier(0, 0.8, 0.3, 1) 0s;
+}
+
 .wayfinderreveal {
 	transition: transform 0.85s cubic-bezier(0, 0.8, 0.3, 1) 0s,
-				opacity 1.85s cubic-bezier(0, 0.8, 0.3, 1) 0s,
-				filter 0.5s ease-in-out 0s, opacity 1s ease-out 0.05s;
+				filter 0.25s ease-in-out 0s,
+				opacity 0.25s ease-out 0.05s;
 	opacity: 1;
 	transform: scale(1);
 }
 
 .wayfinderhide {
 	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s,
-				opacity 1.85s cubic-bezier(0, 0.8, 0.3, 1) 0s,
-				filter 0.5s ease-in-out 0s, opacity 0.5s ease-out 0.05s;
+				filter 0.25s ease-in-out 0s,
+				opacity 0.25s ease-out 0.05s;
 	opacity: 0;
 	transform: scale(1.3);
 }
@@ -273,9 +283,14 @@
 	filter: none;
 }
 
+#wayfinder-h {
+	transition: opacity 1s cubic-bezier(0, 0.8, 0.3, 1) 0s;
+}
+
 #wayfinder-h-scroll {
 	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s,
-				filter 0.5s ease-in-out 0s, opacity 0.5s ease-out 0.05s;
+				filter 0.5s ease-in-out 0s,
+				opacity 0.5s ease-out 0.05s;
 }
 
 
@@ -319,12 +334,12 @@
 }
 
 .pagecontent-about-hide {
-	/* transform: translateX(-5rem); */
+	transform: translateX(-10rem);
 	clip-path: inset(0% 100% 0% 0%);
 }
 
 .pagecontent-msg-hide {
-	/* transform: translateX(5rem); */
+	transform: translateX(10rem);
 	clip-path: inset(0% 0% 0% 100%);
 }
 
@@ -367,8 +382,23 @@
 
 /* ONBOARDING */
 
+#logotype-help {
+	pointer-events: auto;
+	opacity: 0;
+	transition: opacity 2s ease-in-out;
+}
+
+.logotype-help-disable {
+	pointer-events: none;
+}
+
 #onboardinggrp {
 	pointer-events: none;
+}
+
+.onboarding-hide {
+	opacity: 0;
+	animation: none !important;
 }
 
 #onboarding-intro {
@@ -376,22 +406,34 @@
 	animation: onboard-intro 3s cubic-bezier(.31,1.1,.4,1.01) 2s;
 }
 
+.onboarding-intro-start {
+	animation: onboard-intro 3s cubic-bezier(.31,1.1,.4,1.01) 0s;
+}
+
 #onboarding-vert {
 	margin-left: -15px;
 	opacity: 0;
-	animation: onboard-vert 5s cubic-bezier(0.08, 1.35, 0.16, 1) 5s;
+}
+
+.onboarding-vert-start {
+	animation: onboard-vert 5s forwards cubic-bezier(0.08, 1.35, 0.16, 1) ;
 }
 
 #onboarding-horiz {
 	opacity: 0;
-	animation: onboard-horiz 5s cubic-bezier(0.08, 1.35, 0.16, 1) 10s;
+}
+
+.onboarding-horiz-start {
+	animation: onboard-horiz 5s forwards cubic-bezier(0.08, 1.35, 0.16, 1);
 }
 
 #onboarding-tap {
 	opacity: 0;
-	animation: onboard-tap 5s cubic-bezier(0.08, 1.35, 0.16, 1) 15s;
 }
 
+.onboarding-tap-start {
+	animation: onboard-tap 5s forwards cubic-bezier(0.08, 1.35, 0.16, 1);
+}
 
 @keyframes onboard-intro {
 	0% {
@@ -514,13 +556,13 @@
 
 .logotype-globalmobile {
 	opacity: 0;
-	transition: opacity 1s ease-in-out 0s;
+	transition: opacity 6s ease-in-out 0s;
 }
 
 .homenavtxt {
 	opacity: 0.75;
-	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 2s,
-				clip-path 0.5s cubic-bezier(0.4, 0, 0.3, 1) 2.25s;
+	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0.75s,
+				clip-path 0.5s cubic-bezier(0.4, 0, 0.3, 1) 1s;
 }
 
 #hometxt-about {
