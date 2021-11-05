@@ -25,6 +25,10 @@
 	pointer-events: none;
 }
 
+#swipefeedbackgrp {
+	pointer-events: none;
+}
+
 #detailgrp-linkbox {
 	pointer-events: auto;
 }
@@ -73,6 +77,83 @@
 	visibility: visible;
 }
 
+/* SWIPE FEEDBACK LINES */
+
+.swipe-right {
+	animation: swipe_right 0.35s cubic-bezier(0, 1.12, .85, 1.01) 0s 1 normal forwards;
+}
+
+.swipe-left {
+	animation: swipe_left 0.35s cubic-bezier(0, 1.12, .85, 1.01) 0s 1 normal forwards;
+}
+
+.swipe-up {
+	animation: swipe_up 0.35s cubic-bezier(0, 1.12, .85, 1.01) 0s 1 normal forwards;
+}
+
+.swipe-down {
+	animation: swipe_down 0.35s cubic-bezier(0, 1.12, .85, 1.01) 0s 1 normal forwards;
+}
+
+
+@keyframes swipe_right {
+	0% {
+		opacity: 0;
+		transform: translateX(0vw);
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(90vw);
+	}
+}
+
+@keyframes swipe_left {
+	0% {
+		opacity: 0;
+		transform: translateX(90vw);
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(0vw);
+	}
+}
+
+@keyframes swipe_up {
+	0% {
+		opacity: 0;
+		transform: translateY(90vh);
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(0vh);
+	}
+}
+
+@keyframes swipe_down {
+	0% {
+		opacity: 0;
+		transform: translateY(0vh);
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(90vh);
+	}
+}
+
+
+
 
 /* TITLES, RS TEXT, WORK METADATA */
 .titlegrp-flex-flip {
@@ -87,33 +168,38 @@
 	animation-delay: -0.05s !important;
 }
 
+#titleproject-bgblur {
+	backdrop-filter: blur(2rem);
+} 
+
+
 .titlestudentnames {
 	clip-path: inset(0% 0% 100% 0%);	
 }
 
 .trevealleft {
-	animation: title_reveal_left 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
+	animation: title_reveal_left 2.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
 		normal forwards;
 }
 
 .trevealright {
-	animation: title_reveal_right 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
+	animation: title_reveal_right 2.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
 		normal forwards;
 }
 .trevealup {
-	animation: title_reveal_up 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal
+	animation: title_reveal_up 2.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal
 		forwards;
 }
 .trevealdown {
-	animation: title_reveal_down 1.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
+	animation: title_reveal_down 2.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
 		normal forwards;
 }
 .trevealup-quick {
-	animation: title_reveal_up 0.5s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal
+	animation: title_reveal_up 1s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal
 		forwards;
 }
 .trevealdown-quick {
-	animation: title_reveal_down 0.5s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
+	animation: title_reveal_down 1s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
 		normal forwards;
 }
 
@@ -276,7 +362,7 @@
 				filter 0.25s ease-in-out 0s,
 				opacity 0.25s ease-out 0.05s;
 	opacity: 0;
-	transform: scale(1.3);
+	transform: scale(1.6);
 }
 
 #wayfinder-v {
@@ -391,6 +477,12 @@
 .logotype-help-disable {
 	pointer-events: none;
 }
+
+#pagecontent-home-hints {
+	opacity: 0;
+	transition: opacity 2s ease-in-out;
+}
+
 
 #onboardinggrp {
 	pointer-events: none;
@@ -520,8 +612,8 @@
 }	
 
 .cityrs-home {
-	transition: transform 3s cubic-bezier(.35,0,.58,1) 0.2s,
-				filter 3s ease-in-out 0s,
+	transition: transform 1s cubic-bezier(.35,0,.58,1) 0.2s,
+				filter 1s ease-in-out 0s,
 				opacity 3s ease-in-out 0s;
 }	
 
@@ -628,7 +720,7 @@
 		opacity: 1;
 	}
 	100% {
-		clip-path: inset(0% 0% -10% 0%);
+		clip-path: inset(-75% -75% -75% -75%);
 	}
 }
 
@@ -642,7 +734,7 @@
 		opacity: 1;
 	}
 	100% {
-		clip-path: inset(0% 0% -10% 0%);
+		clip-path: inset(-75% -75% -75% -75%);
 	}
 }
 
@@ -656,7 +748,7 @@
 		opacity: 1;
 	}
 	100% {
-		clip-path: inset(0% 0% -10% 0%);
+		clip-path: inset(-75% -75% -75% -75%);
 	}
 }
 
@@ -670,7 +762,7 @@
 		opacity: 1;
 	}
 	100% {
-		clip-path: inset(0% 0% -10% 0%);
+		clip-path: inset(-100% -100% -100% -100%);
 	}
 }
 
