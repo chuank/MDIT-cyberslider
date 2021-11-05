@@ -475,7 +475,7 @@
 }
 
 .logotype-help-disable {
-	pointer-events: none;
+	pointer-events: none !important;
 }
 
 #pagecontent-home-hints {
