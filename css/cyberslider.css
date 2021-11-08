@@ -495,15 +495,22 @@
 
 #onboarding-intro {
 	opacity: 0;
-	animation: onboard-intro 3s cubic-bezier(.31,1.1,.4,1.01) 2s;
+	animation: onboard-intro 12s cubic-bezier(.31,1.1,.4,1.01) 2s;
 }
 
 .onboarding-intro-start {
-	animation: onboard-intro 3s cubic-bezier(.31,1.1,.4,1.01) 0s;
+	animation: onboard-intro 12s cubic-bezier(.31,1.1,.4,1.01) 0s;
+}
+
+#onboarding-aoc {
+	opacity: 0;
+}
+
+.onboarding-aoc-start {
+	animation: onboard-aoc 15s cubic-bezier(.31,1.1,.4,1.01) 0s;
 }
 
 #onboarding-vert {
-	margin-left: -15px;
 	opacity: 0;
 }
 
@@ -532,11 +539,30 @@
 		opacity: 0;
 		transform: scale(1.5);
 	}
-	50% {
+	15% {
 		opacity: 0.85;
 		transform: scale(1);
 	}
-	70% {
+	80% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1);
+	}
+}
+
+@keyframes onboard-aoc {
+	0% {
+		opacity: 0;
+		transform: scale(1.5);
+	}
+	15% {
+		opacity: 0.85;
+		transform: scale(1);
+	}
+	80% {
 		opacity: 1;
 		transform: scale(1);
 	}
