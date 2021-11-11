@@ -60,22 +60,19 @@
 
 /* FOR DYNAMICALLY-CREATED DIVS */
 .rsRow {
-	display: block;
+	display: none;
 	position: relative;
 	transition: transform 1.75s cubic-bezier(0.08, 1.35, 0.16, 1);
+}
+
+.rsRow-show {
+	display: block;
 }
 
 .wraparound {
 	opacity: 1;
 }
 
-.rsRow-hide {
-	visibility: hidden !important;
-}
-
-.rsRow-show {
-	visibility: visible !important;
-}
 
 
 /* SWIPE FEEDBACK LINES */
@@ -99,7 +96,7 @@
 
 @keyframes swipe_right {
 	0% {
-		opacity: 0;
+		opacity: 0.5;
 		transform: translateX(0vw);
 	}
 	50% {
@@ -113,7 +110,7 @@
 
 @keyframes swipe_left {
 	0% {
-		opacity: 0;
+		opacity: 0.5;
 		transform: translateX(90vw);
 	}
 	50% {
@@ -127,7 +124,7 @@
 
 @keyframes swipe_up {
 	0% {
-		opacity: 0;
+		opacity: 0.5;
 		transform: translateY(90vh);
 	}
 	50% {
@@ -141,7 +138,7 @@
 
 @keyframes swipe_down {
 	0% {
-		opacity: 0;
+		opacity: 0.5;
 		transform: translateY(0vh);
 	}
 	50% {
@@ -163,8 +160,9 @@
 }
 
 .titleproject {
+	opacity: 1;
 	/* clip-path: inset(0% 0% 100% 0%); */
-	animation-delay: 0s !important;
+	/* animation-delay: 0s !important; */
 }
 
 #titleproject-bgblur {
@@ -173,24 +171,25 @@
 
 
 .titlestudentnames {
+	opacity: 1;
 	/* clip-path: inset(0% 0% 100% 0%);	 */
 }
 
 .trevealleft {
-	animation: title_reveal_left 2.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
+	animation: title_reveal_left 2s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
 		normal forwards;
 }
 
 .trevealright {
-	animation: title_reveal_right 2.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
+	animation: title_reveal_right 2s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
 		normal forwards;
 }
 .trevealup {
-	animation: title_reveal_up 2.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal
+	animation: title_reveal_up 2s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1 normal
 		forwards;
 }
 .trevealdown {
-	animation: title_reveal_down 2.75s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
+	animation: title_reveal_down 2s cubic-bezier(0.14, 1.79, 0.43, 1) 0s 1
 		normal forwards;
 }
 .trevealup-quick {
@@ -385,15 +384,18 @@
 
 .heroimage {
 	opacity: 0;
-	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0.075s,
-				opacity 0.5s ease-out 0s;
-	visibility: visible;
+	transform: scale(0.8);
+	transition: transform 0.25s cubic-bezier(0.4, 0, 0.3, 1) 0s,
+				opacity 0.25s ease-out 0s;
+	display: none;
 	backface-visibility: hidden;
 }
 
-.heroimage-hide {
-	visibility: hidden !important;
+.heroimage-show {
+	display: block;
+	/* visibility: hidden !important; */
 }
+
 
 .heroimage-reveal {
 	opacity: 1;
@@ -623,7 +625,7 @@
 
 .rs-underlay-flex {
 	display: block;
-	transform: 'scale(2) rotate3d(0, 0, 0, 0deg)';
+	transform: scale(2) rotate3d(0, 0, 0, 0deg);
 	opacity: 0;
 	transition: transform 20s cubic-bezier(0.25, 0, 0.75, 1) 0s,
 		opacity 0.5s ease-in-out 0.05s;
@@ -745,7 +747,7 @@
 
 @keyframes title_reveal_left {
 	0% {
-		/* clip-path: inset(0% 0% -10% 100%); */
+		clip-path: inset(0% 0% -10% 100%);
 		transform: translate(-5rem, 0);
 		opacity: 0;
 	}
@@ -753,13 +755,13 @@
 		opacity: 1;
 	}
 	100% {
-		/* clip-path: inset(-75% -75% -75% -75%); */
+		clip-path: inset(-75% -75% -75% -75%);
 	}
 }
 
 @keyframes title_reveal_right {
 	0% {
-		/* clip-path: inset(0% 100% -10% 0%); */
+		clip-path: inset(0% 100% -10% 0%);
 		transform: translate(5rem, 0);
 		opacity: 0;
 	}
@@ -767,13 +769,13 @@
 		opacity: 1;
 	}
 	100% {
-		/* clip-path: inset(-75% -75% -75% -75%); */
+		clip-path: inset(-75% -75% -75% -75%);
 	}
 }
 
 @keyframes title_reveal_up {
 	0% {
-		/* clip-path: inset(100% 0% -10% 0%); */
+		clip-path: inset(100% 0% -10% 0%);
 		transform: translate(0, -5rem);
 		opacity: 0;
 	}
@@ -781,13 +783,13 @@
 		opacity: 1;
 	}
 	100% {
-		/* clip-path: inset(-75% -75% -75% -75%); */
+		clip-path: inset(-75% -75% -75% -75%);
 	}
 }
 
 @keyframes title_reveal_down {
 	0% {
-		/* clip-path: inset(0% 0% 100% 0%); */
+		clip-path: inset(0% 0% 100% 0%);
 		transform: translate(0, 5rem);
 		opacity: 0;
 	}
@@ -795,7 +797,7 @@
 		opacity: 1;
 	}
 	100% {
-		/* clip-path: inset(-100% -100% -100% -100%); */
+		clip-path: inset(-100% -100% -100% -100%);
 	}
 }
 
@@ -814,21 +816,21 @@
 
 @keyframes rs_reveal_up {
 	0% {
-		transform: scale(1) translate(0, -5rem);
+		transform: translate(0, -5rem);
 		opacity: 0;
 	}
 	25% {
 		opacity: 1;
 	}
 	100% {
-		transform: scale(1) translate(0, 0);
+		transform: translate(0, 0);
 		opacity: 1;
 	}
 }
 
 @keyframes rs_reveal_down {
 	0% {
-		transform: scale(1) translate(0, 5rem);
+		transform: translate(0, 5rem);
 		opacity: 0;
 	}
 	25% {
@@ -909,7 +911,7 @@
 	32% { opacity: 0.88; transform: skew(0) scale(1);}
 	33% { opacity: 1; }
 	34% { opacity: 0; }
-  100% { opacity: 0; }
+   100% { opacity: 0; }
 }
 
 @keyframes opacityFlicker-logo-alt {
