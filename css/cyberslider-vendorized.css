@@ -80,12 +80,13 @@
 }
 
 .rsRow-hide {
-	visibility: hidden;
+	visibility: hidden !important;
 }
 
 .rsRow-show {
-	visibility: visible;
+	visibility: visible !important;
 }
+
 
 /* SWIPE FEEDBACK LINES */
 
@@ -571,8 +572,13 @@
 	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0.075s,
 				opacity 0.5s ease-out 0s,
 				-webkit-transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0.075s;
+	visibility: visible;
 	-webkit-backface-visibility: hidden;
 	        backface-visibility: hidden;
+}
+
+.heroimage-hide {
+	visibility: hidden !important;
 }
 
 .heroimage-reveal {
