@@ -240,15 +240,13 @@
 }
 
 
-
-
 /* TITLES, RS TEXT, WORK METADATA */
 .titlegrp-flex-flip {
 	-webkit-box-pack: start;
 	-ms-flex-pack: start;
 	justify-content: flex-start;
 }
-  
+
 .titleproject {
 	/* clip-path: inset(0% 0% 100% 0%); */
 	-webkit-animation-delay: 0s !important;

@@ -153,8 +153,6 @@
 }
 
 
-
-
 /* TITLES, RS TEXT, WORK METADATA */
 .titlegrp-flex-flip {
 	-webkit-box-pack: start;
@@ -162,9 +160,9 @@
 	-ms-flex-pack: start;
 	justify-content: flex-start;
 }
-  
+
 .titleproject {
-	clip-path: inset(0% 0% 100% 0%);
+	/* clip-path: inset(0% 0% 100% 0%); */
 	animation-delay: 0s !important;
 }
 
@@ -174,7 +172,7 @@
 
 
 .titlestudentnames {
-	clip-path: inset(0% 0% 100% 0%);	
+	/* clip-path: inset(0% 0% 100% 0%);	 */
 }
 
 .trevealleft {
@@ -317,32 +315,32 @@
 
 .wayfinder-bkt-DFB-blur {
 	filter: brightness(0) saturate(100%) invert(48%) sepia(76%) saturate(1307%)
-		hue-rotate(285deg) brightness(101%) contrast(104%) blur(1rem);
+		hue-rotate(285deg) brightness(101%) contrast(104%);
 }
 
 .wayfinder-bkt-IME-blur {
 	filter: brightness(0) saturate(100%) invert(85%) sepia(92%) saturate(304%)
-		hue-rotate(84deg) brightness(110%) contrast(107%) blur(1rem);
+		hue-rotate(84deg) brightness(110%) contrast(107%);
 }
 
 .wayfinder-bkt-IFE-blur {
 	filter: brightness(0) saturate(100%) invert(80%) sepia(17%) saturate(7441%)
-	hue-rotate(191deg) brightness(103%) contrast(105%) blur(1rem);
+	hue-rotate(191deg) brightness(103%) contrast(105%);
 }
 
 .wayfinder-bkt-IXT-blur {
 	filter: brightness(0) saturate(100%) invert(75%) sepia(95%) saturate(356%)
-		hue-rotate(11deg) brightness(108%) contrast(106%) blur(0.1rem);
+		hue-rotate(11deg) brightness(108%) contrast(106%);
 }
 
 .wayfinder-bkt-SUF-blur {
 	filter: brightness(0) saturate(100%) invert(100%) sepia(30%) saturate(5283%)
-		hue-rotate(57deg) brightness(125%) contrast(100%) blur(1rem);
+		hue-rotate(57deg) brightness(125%) contrast(100%);
 }
 
 .wayfinder-bkt-MJP-blur {
 	filter: invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%)
-		contrast(100%) blur(1rem);
+		contrast(100%);
 }
 
 .wayfinder-v-unit {
@@ -364,7 +362,8 @@
 }
 
 #wayfinder-v {
-	filter: none;
+	filter: invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%)
+		contrast(100%);
 }
 
 #wayfinder-h {
@@ -379,11 +378,15 @@
 
 
 /* WORK IMAGE */
+.collection-item {
+	transform-style: preserve-3d;
+}
+
 .heroimage {
 	opacity: 0;
 	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0.075s,
-				opacity 0.5s ease-out 0s,
-				filter 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s;
+				opacity 0.5s ease-out 0s;
+	backface-visibility: hidden;
 }
 
 .heroimage-reveal {
@@ -736,7 +739,7 @@
 
 @keyframes title_reveal_left {
 	0% {
-		clip-path: inset(0% 0% -10% 100%);
+		/* clip-path: inset(0% 0% -10% 100%); */
 		transform: translate(-5rem, 0);
 		opacity: 0;
 	}
@@ -744,13 +747,13 @@
 		opacity: 1;
 	}
 	100% {
-		clip-path: inset(-75% -75% -75% -75%);
+		/* clip-path: inset(-75% -75% -75% -75%); */
 	}
 }
 
 @keyframes title_reveal_right {
 	0% {
-		clip-path: inset(0% 100% -10% 0%);
+		/* clip-path: inset(0% 100% -10% 0%); */
 		transform: translate(5rem, 0);
 		opacity: 0;
 	}
@@ -758,13 +761,13 @@
 		opacity: 1;
 	}
 	100% {
-		clip-path: inset(-75% -75% -75% -75%);
+		/* clip-path: inset(-75% -75% -75% -75%); */
 	}
 }
 
 @keyframes title_reveal_up {
 	0% {
-		clip-path: inset(100% 0% -10% 0%);
+		/* clip-path: inset(100% 0% -10% 0%); */
 		transform: translate(0, -5rem);
 		opacity: 0;
 	}
@@ -772,13 +775,13 @@
 		opacity: 1;
 	}
 	100% {
-		clip-path: inset(-75% -75% -75% -75%);
+		/* clip-path: inset(-75% -75% -75% -75%); */
 	}
 }
 
 @keyframes title_reveal_down {
 	0% {
-		clip-path: inset(0% 0% 100% 0%);
+		/* clip-path: inset(0% 0% 100% 0%); */
 		transform: translate(0, 5rem);
 		opacity: 0;
 	}
@@ -786,7 +789,7 @@
 		opacity: 1;
 	}
 	100% {
-		clip-path: inset(-100% -100% -100% -100%);
+		/* clip-path: inset(-100% -100% -100% -100%); */
 	}
 }
 
@@ -798,7 +801,7 @@
 		opacity: 0;
 	}
 	100% {
-		clip-path: inset(0% 0% 100% 0%);
+		/* clip-path: inset(0% 0% 100% 0%); */
 		transform: translate(0, 5rem);
 	}
 }
