@@ -385,21 +385,18 @@
 .heroimage {
 	opacity: 0;
 	transform: scale(0.8);
-	transition: transform 0.25s cubic-bezier(0.4, 0, 0.3, 1) 0s,
-				opacity 0.25s ease-out 0s;
-	display: none;
+	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s,
+				opacity 0.5s ease-out 0s;
 	backface-visibility: hidden;
 }
 
 .heroimage-show {
 	display: block;
-	/* visibility: hidden !important; */
+	opacity: 0;
 }
 
-
-.heroimage-reveal {
-	opacity: 1;
-	transform: scale(1);
+.loadingmsg {
+	transition: opacity 1s ease-in-out 0s;
 }
 
 
@@ -449,7 +446,6 @@
 }
 
 #whiteout-rear {
-	/* mix-blend-mode: lighten; */
 	transition: opacity 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s;
 }
 
