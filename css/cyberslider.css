@@ -164,12 +164,14 @@
 }
 
 .titleproject {
+	transform: translateZ(0);
 	opacity: 1;
 	/* clip-path: inset(0% 0% 100% 0%); */
 	/* animation-delay: 0s !important; */
 }
 
 .titlestudentnames {
+	transform: translateZ(0);
 	opacity: 1;
 	/* clip-path: inset(0% 0% 100% 0%);	 */
 }
@@ -206,6 +208,14 @@
 		forwards;
 	/* clip-path: inset(0% 0% 100% 0%); */
 	/* transform: translate(0, 5rem); */
+}
+
+#rsintro-heading {
+	transform: translateZ(0);
+}
+
+#rsintro-blurb {
+	transform: translateZ(0);
 }
 
 .rsrevealup {
@@ -268,10 +278,6 @@
 	filter: invert(98%) sepia(51%) saturate(412%) hue-rotate(249deg) brightness(121%) contrast(91%);
 }
 
-/* #wayfinder-bkt-glow {
-	filter: blur(0.5rem);
-} */
-
 .wayfinder-text-rs {
 	text-overflow: ellipsis;
 	animation: typewriterX 0.75s steps(15, end) 0.3s 1 normal forwards;
@@ -312,26 +318,32 @@
 }
 
 .wayfinder-bkt-DFB-blur {
+	transform: translateZ(0);
 	filter: invert(48%) sepia(76%) saturate(1307%) hue-rotate(285deg) brightness(101%) contrast(104%) blur(0.75rem);
 }
 
 .wayfinder-bkt-IME-blur {
+	transform: translateZ(0);
 	filter: invert(85%) sepia(92%) saturate(304%) hue-rotate(84deg) brightness(110%) contrast(107%) blur(0.75rem);
 }
 
 .wayfinder-bkt-IFE-blur {
+	transform: translateZ(0);
 	filter: invert(80%) sepia(17%) saturate(7441%) hue-rotate(191deg) brightness(103%) contrast(105%) blur(0.75rem);
 }
 
 .wayfinder-bkt-IXT-blur {
+	transform: translateZ(0);
 	filter: invert(75%) sepia(95%) saturate(356%) hue-rotate(11deg) brightness(108%) contrast(106%) blur(0.75rem);
 }
 
 .wayfinder-bkt-SUF-blur {
+	transform: translateZ(0);
 	filter: invert(100%) sepia(30%) saturate(5283%) hue-rotate(57deg) brightness(125%) contrast(100%) blur(0.75rem);
 }
 
 .wayfinder-bkt-MJP-blur {
+	transform: translateZ(0);
 	filter: invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%) blur(0.75rem);
 }
 
@@ -343,14 +355,14 @@
 	transition: transform 0.85s cubic-bezier(0, 0.8, 0.3, 1) 0s,
 				opacity 0.25s ease-out 0.05s;				
 	opacity: 1;
-	transform: scale(1);
+	transform: scale(1) translateZ(0);
 }
 
 .wayfinderhide {
 	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s,
 				opacity 0.25s ease-out 0.05s;
 	opacity: 0;
-	transform: scale(1.6);
+	transform: scale(1.6) translateZ(0);
 }
 
 #wayfinder-v {
@@ -363,6 +375,7 @@
 }
 
 #wayfinder-h-scroll {
+	transform: translateZ(0);
 	/* filter: invert(0) sepia(0) saturate(100%) hue-rotate(0) brightness(100%) contrast(100%); */
 	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s,
 				filter 0.5s ease-in-out 0s,
