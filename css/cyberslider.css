@@ -78,18 +78,22 @@
 /* SWIPE FEEDBACK LINES */
 
 .swipe-right {
+	filter: invert(98%) sepia(51%) saturate(0) hue-rotate(249deg) brightness(121%) contrast(91%);
 	animation: swipe_right 0.35s cubic-bezier(0, 1.12, .85, 1.01) 0s 1 normal forwards;
 }
 
 .swipe-left {
+	filter: invert(98%) sepia(51%) saturate(0) hue-rotate(249deg) brightness(121%) contrast(91%);
 	animation: swipe_left 0.35s cubic-bezier(0, 1.12, .85, 1.01) 0s 1 normal forwards;
 }
 
 .swipe-up {
+	filter: invert(98%) sepia(51%) saturate(412%) hue-rotate(249deg) brightness(121%) contrast(91%);
 	animation: swipe_up 0.35s cubic-bezier(0, 1.12, .85, 1.01) 0s 1 normal forwards;
 }
 
 .swipe-down {
+	filter: invert(98%) sepia(51%) saturate(412%) hue-rotate(249deg) brightness(121%) contrast(91%);
 	animation: swipe_down 0.35s cubic-bezier(0, 1.12, .85, 1.01) 0s 1 normal forwards;
 }
 
@@ -164,11 +168,6 @@
 	/* clip-path: inset(0% 0% 100% 0%); */
 	/* animation-delay: 0s !important; */
 }
-
-#titleproject-bgblur {
-	backdrop-filter: blur(2rem);
-} 
-
 
 .titlestudentnames {
 	opacity: 1;
@@ -266,6 +265,7 @@
 /* WAYFINDER */
 .wayfinder-bkt {
 	opacity: 0;
+	filter: invert(98%) sepia(51%) saturate(412%) hue-rotate(249deg) brightness(121%) contrast(91%);
 }
 
 /* #wayfinder-bkt-glow {
@@ -273,7 +273,6 @@
 } */
 
 .wayfinder-text-rs {
-	/* mix-blend-mode: normal; */
 	text-overflow: ellipsis;
 	animation: typewriterX 0.75s steps(15, end) 0.3s 1 normal forwards;
 }
@@ -284,63 +283,56 @@
 }
 
 .wayfinder-bkt-DFB {
-	filter: brightness(0) saturate(100%) invert(48%) sepia(76%) saturate(1307%)
+	filter: invert(48%) sepia(76%) saturate(1307%)
 		hue-rotate(285deg) brightness(101%) contrast(104%);
 }
 
 .wayfinder-bkt-IME {
-	filter: brightness(0) saturate(100%) invert(85%) sepia(92%) saturate(304%)
+	filter: invert(85%) sepia(92%) saturate(304%)
 		hue-rotate(84deg) brightness(110%) contrast(107%);
 }
 
 .wayfinder-bkt-IFE {
-	filter: brightness(0) saturate(100%) invert(80%) sepia(17%) saturate(7441%)
+	filter: invert(80%) sepia(17%) saturate(7441%)
 		hue-rotate(191deg) brightness(103%) contrast(105%);
 }
 
 .wayfinder-bkt-IXT {
-	filter: brightness(0) saturate(100%) invert(75%) sepia(95%) saturate(356%)
+	filter: invert(75%) sepia(95%) saturate(356%)
 		hue-rotate(11deg) brightness(108%) contrast(106%);
 }
 
 .wayfinder-bkt-SUF {
-	filter: brightness(0) saturate(100%) invert(100%) sepia(30%) saturate(5283%)
+	filter: invert(100%) sepia(30%) saturate(5283%)
 		hue-rotate(57deg) brightness(125%) contrast(100%);
 }
 
 .wayfinder-bkt-MJP {
-	filter: invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%)
-		contrast(100%);
+	filter: invert(98%) sepia(51%) saturate(412%) hue-rotate(249deg) brightness(121%) contrast(91%);
 }
 
 .wayfinder-bkt-DFB-blur {
-	filter: brightness(0) saturate(100%) invert(48%) sepia(76%) saturate(1307%)
-		hue-rotate(285deg) brightness(101%) contrast(104%);
+	filter: invert(48%) sepia(76%) saturate(1307%) hue-rotate(285deg) brightness(101%) contrast(104%) blur(0.75rem);
 }
 
 .wayfinder-bkt-IME-blur {
-	filter: brightness(0) saturate(100%) invert(85%) sepia(92%) saturate(304%)
-		hue-rotate(84deg) brightness(110%) contrast(107%);
+	filter: invert(85%) sepia(92%) saturate(304%) hue-rotate(84deg) brightness(110%) contrast(107%) blur(0.75rem);
 }
 
 .wayfinder-bkt-IFE-blur {
-	filter: brightness(0) saturate(100%) invert(80%) sepia(17%) saturate(7441%)
-	hue-rotate(191deg) brightness(103%) contrast(105%);
+	filter: invert(80%) sepia(17%) saturate(7441%) hue-rotate(191deg) brightness(103%) contrast(105%) blur(0.75rem);
 }
 
 .wayfinder-bkt-IXT-blur {
-	filter: brightness(0) saturate(100%) invert(75%) sepia(95%) saturate(356%)
-		hue-rotate(11deg) brightness(108%) contrast(106%);
+	filter: invert(75%) sepia(95%) saturate(356%) hue-rotate(11deg) brightness(108%) contrast(106%) blur(0.75rem);
 }
 
 .wayfinder-bkt-SUF-blur {
-	filter: brightness(0) saturate(100%) invert(100%) sepia(30%) saturate(5283%)
-		hue-rotate(57deg) brightness(125%) contrast(100%);
+	filter: invert(100%) sepia(30%) saturate(5283%) hue-rotate(57deg) brightness(125%) contrast(100%) blur(0.75rem);
 }
 
 .wayfinder-bkt-MJP-blur {
-	filter: invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%)
-		contrast(100%);
+	filter: invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%) blur(0.75rem);
 }
 
 .wayfinder-v-unit {
@@ -349,7 +341,7 @@
 
 .wayfinderreveal {
 	transition: transform 0.85s cubic-bezier(0, 0.8, 0.3, 1) 0s,
-				opacity 0.25s ease-out 0.05s;
+				opacity 0.25s ease-out 0.05s;				
 	opacity: 1;
 	transform: scale(1);
 }
@@ -371,6 +363,7 @@
 }
 
 #wayfinder-h-scroll {
+	/* filter: invert(0) sepia(0) saturate(100%) hue-rotate(0) brightness(100%) contrast(100%); */
 	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s,
 				filter 0.5s ease-in-out 0s,
 				opacity 0.5s ease-out 0.05s;
@@ -383,20 +376,19 @@
 }
 
 .heroimage {
-	opacity: 0;
+	display: none;
 	transform: scale(0.8);
 	transition: transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s,
-				opacity 0.5s ease-out 0s;
+				opacity 0.25s ease-out 0s;
 	backface-visibility: hidden;
 }
 
 .heroimage-show {
 	display: block;
-	opacity: 0;
 }
 
 .loadingmsg {
-	transition: opacity 1s ease-in-out 0s;
+	transition: opacity 0.8s ease-in-out 0s;
 }
 
 
@@ -407,14 +399,12 @@
 }
 
 #pagecontent-about {
-	/* clip-path: inset(0% 100% 0% 0%); */
 	transition: clip-path 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s,
 				transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s,
 				opacity 1s cubic-bezier(0.4, 0, 0.3, 1) 0s;
 }
 
 #pagecontent-msg {
-	/* clip-path: inset(0% 0% 0% 100%); */
 	transition: clip-path 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s,
 				transform 0.5s cubic-bezier(0.4, 0, 0.3, 1) 0s,
 				opacity 1s cubic-bezier(0.4, 0, 0.3, 1) 0s;
@@ -614,11 +604,6 @@
 
 
 /* RS pattern texture */
-#rs-underlay {
-	/* mix-blend-mode: screen; */
-	filter: brightness(30%);
-}
-
 .rs-underlay-flex {
 	display: block;
 	transform: scale(2) rotate3d(0, 0, 0, 0deg);
@@ -720,14 +705,8 @@
 	}
 } 
 
-/* clip-path: inset(0% 0% 100% 0%); // HIDE */
-/* clip-path: inset(0% 0% -10% 0%);	// SHOW */
-
 
 /* ANIMATIONS */
-
-
-
 
 @keyframes starfieldRotate {
 	0% {
@@ -805,7 +784,7 @@
 		opacity: 0;
 	}
 	100% {
-		/* clip-path: inset(0% 0% 100% 0%); */
+		clip-path: inset(0% 0% 100% 0%);
 		transform: translate(0, 5rem);
 	}
 }
