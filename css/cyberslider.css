@@ -720,6 +720,9 @@
 
 @media screen and (max-width: 767px) {
 	.wayfinder-text-coursename {
+		-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
 		top: 42px;
 		left: calc(100vw - 13px);
 		bottom: auto;
