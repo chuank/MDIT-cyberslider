@@ -510,9 +510,17 @@
 	animation: none !important;
 }
 
+#onboarding-rmitmdit {
+	opacity: 0;
+	animation: onboard-intro 6s cubic-bezier(.31,1.1,.4,1.01) 2s;
+}
+
+.onboarding-rmitmdit-start {
+	animation: onboard-intro 6s cubic-bezier(.31,1.1,.4,1.01) 0s;
+}
+
 #onboarding-intro {
 	opacity: 0;
-	animation: onboard-intro 12s cubic-bezier(.31,1.1,.4,1.01) 2s;
 }
 
 .onboarding-intro-start {
